@@ -1,0 +1,10 @@
+recObj = audiorecorder(44100,8,2);
+disp('Start speaking.');
+recordblocking(recObj, 5);
+disp('End of Recording.');
+play(recObj);
+y = getaudiodata(recObj);
+Fs=44.1*1000;
+
+filename='soumya.wav';
+audiowrite(filename,y,);

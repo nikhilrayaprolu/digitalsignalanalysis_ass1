@@ -1,0 +1,7 @@
+[y,Fs] = audioread('TrainWhistle-16-44p1-mono-9secs.wav');
+sound(y,Fs);
+disp('Start speaking.')
+recordblocking(recObj, 5);
+disp('End of Recording.');
+play(recObj);
+y = getaudiodata(recObj);

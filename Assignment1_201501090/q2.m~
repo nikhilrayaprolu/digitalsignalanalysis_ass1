@@ -1,0 +1,17 @@
+a=zeros(250,500);
+b=255*ones(250,500);
+A=[a;b];
+B=[0, 0, 0;0 1 0;0 -1 0];
+Bt=transpose(B);
+subplot(1,4,1);
+imshow(A);
+WL=conv2(A,B,'same');
+subplot(1,4,2);
+imshow(WL);
+cam=rgbimread('cameraman.tif');
+cl=conv2(cam,B,'same');
+subplot(1,4,3);
+imshow(cl);
+cl2=conv2(cam,Bt,'same');
+subplot(1,4,4);
+imshow(cl2);
